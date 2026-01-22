@@ -1,7 +1,9 @@
 package com.petclinic.model;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.MappedSuperclass;
 
+@MappedSuperclass
 public class NamedEntity extends BaseEntity {
 
     @Column(name = "name")

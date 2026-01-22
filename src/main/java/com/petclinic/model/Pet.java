@@ -9,10 +9,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "pets")
-public class Pet {
+public class Pet extends NamedEntity{
 
     @Column(name = "birth_date")
     @DateTimeFormat(pattern = "yyyy/MM/dd")

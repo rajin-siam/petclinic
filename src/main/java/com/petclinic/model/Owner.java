@@ -1,8 +1,6 @@
 package com.petclinic.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotEmpty;
 import org.springframework.beans.support.MutableSortDefinition;
@@ -28,6 +26,7 @@ public class Owner extends Person{
     @Digits(fraction = 0, integer = 10)
     private String telephone;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets;
 
 
