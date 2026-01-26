@@ -37,7 +37,7 @@ public class PetController {
 
     @InitBinder("owner")
     public void initOwnerBinder(WebDataBinder dataBinder) {
-        dataBinder.setValidator("id");
+        dataBinder.setDisallowedFields("id");
     }
 
     @InitBinder("pet")
