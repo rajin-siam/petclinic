@@ -13,10 +13,12 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.orm.ObjectRetrievalFailureException;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.util.List;
 
+@Repository
 public class JdbcPetRepositoryImpl implements PetRepository {
 
     private final JdbcClient jdbcClient;

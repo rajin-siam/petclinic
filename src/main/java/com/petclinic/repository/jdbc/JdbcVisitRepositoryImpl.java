@@ -5,10 +5,12 @@ import com.petclinic.repository.VisitRepository;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.util.List;
 
+@Repository
 public class JdbcVisitRepositoryImpl implements VisitRepository {
 
     private final JdbcClient jdbcClient;
@@ -56,7 +58,7 @@ public class JdbcVisitRepositoryImpl implements VisitRepository {
     private MapSqlParameterSource createVisitParameterSource(Visit visit) {
         return new MapSqlParameterSource()
                 .addValue("id", visit.getId())
-                .addValue("date", visit.getDate())
+                .addValue("visit_date", visit.getDate())
                 .addValue("description", visit.getDescription())
                 .addValue("pet_id", visit.getPet().getId());
     }

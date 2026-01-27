@@ -34,7 +34,7 @@
 
     <oxm:jaxb2-marshaller id="marshaller">
         <!-- Object-XML mapping declared using annotations inside 'Vets' -->
-        <oxm:class-to-be-bound name="org.springframework.samples.petclinic.model.Vets"/>
+        <oxm:class-to-be-bound name="com.petclinic.model.Vets"/>
     </oxm:jaxb2-marshaller>
 
 </beans>

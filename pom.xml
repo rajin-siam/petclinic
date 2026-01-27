@@ -594,6 +594,8 @@
                 </dependency>
             </dependencies>
         </profile>
+
+        <!--
         <profile>
             <id>HSQLDB</id>
             <properties>
@@ -612,7 +614,11 @@
                     <scope>runtime</scope>
                 </dependency>
             </dependencies>
+
         </profile>
+        -->
+
+        <!-- -
         <profile>
             <id>MySQL</id>
             <properties>
@@ -632,6 +638,7 @@
                 </dependency>
             </dependencies>
         </profile>
+        -->
         <profile>
             <id>PostgreSQL</id>
             <properties>
@@ -640,7 +647,7 @@
                 <jdbc.driverClassName>org.postgresql.Driver</jdbc.driverClassName>
                 <jdbc.url>jdbc:postgresql://localhost:5432/petclinic</jdbc.url>
                 <jdbc.username>postgres</jdbc.username>
-                <jdbc.password>petclinic</jdbc.password>
+                <jdbc.password>iamdragon</jdbc.password>
             </properties>
             <dependencies>
                 <dependency>

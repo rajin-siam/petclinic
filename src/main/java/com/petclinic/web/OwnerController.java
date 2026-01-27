@@ -62,7 +62,7 @@ public class OwnerController {
         var results = this.clinicService.findOwnerByLastName(owner.getLastName());
         if (results.isEmpty()) {
             result.rejectValue("lastName", "notFound", "not found");
-            return VIEWS_OWNERS_CREATE_OR_UPDATE_FORM;
+            return "owners/findOwners";
         } else if (results.size() == 1) {
             owner = results.iterator().next();
             return "redirect:/owners/" + owner.getId();
@@ -72,14 +72,14 @@ public class OwnerController {
         }
     }
 
-    @PostMapping(value = "/owners/{ownerId}/edit")
+    @GetMapping(value = "/owners/{ownerId}/edit")
     public String initUpdateOwnerForm(@PathVariable("ownerId") int ownerId, Map<String, Object> model) {
         Owner owner = this.clinicService.findOwnerById(ownerId);
         model.put("owner", owner);
         return VIEWS_OWNERS_CREATE_OR_UPDATE_FORM;
     }
 
-    @GetMapping(value = "/owners/{ownerId}/edit")
+    @PostMapping(value = "/owners/{ownerId}/edit")
     public String processUpdateOwnerForm(@Valid Owner owner, BindingResult result, @PathVariable("ownerId") int ownerId) {
         if (result.hasErrors()) {
             return VIEWS_OWNERS_CREATE_OR_UPDATE_FORM;

@@ -5,11 +5,14 @@ import com.petclinic.repository.OwnerRepository;
 import com.petclinic.repository.PetRepository;
 import com.petclinic.repository.VetRepository;
 import com.petclinic.repository.VisitRepository;
-import jakarta.persistence.Cacheable;
+
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 
+@Service
 public class ClinicServiceImpl implements ClinicService{
 
     private final PetRepository petRepository;
