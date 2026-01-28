@@ -82,13 +82,14 @@ public class JdbcOwnerRepositoryImpl implements OwnerRepository {
         return owner;
     }
 
+
     public void loadPetsAndVisits(final Owner owner) {
         final List<JdbcPet> pets = this.jdbcClient.sql("""
             SELECT pets.id, name, birth_date, type_id, owner_id, visits.id as visit_id, visit_date, description, pet_id
             FROM pets LEFT OUTER JOIN visits ON pets.id = pet_id
             WHERE owner_id=:id ORDER BY pet_id
             """)
-                .param("id", owner.getId())
+                .param( owner.getId())
                 .query(new JdbcPetVisitExtractor());
         Collection<PetType> petTypes = getPetTypes();
         for (JdbcPet pet : pets) {

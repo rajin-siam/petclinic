@@ -8,7 +8,7 @@ import org.springframework.web.servlet.support.AbstractDispatcherServletInitiali
 
 public class PetclinicInitializer extends AbstractDispatcherServletInitializer {
 
-    private static final String SPRING_PROFILE = "jdbc";
+    private static final String SPRING_PROFILE = "jpa";
 
     @Override
     protected WebApplicationContext createRootApplicationContext() {
