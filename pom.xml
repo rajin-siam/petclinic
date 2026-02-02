@@ -574,9 +574,6 @@
     <profiles>
         <profile>
             <id>H2</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <properties>
                 <db.script>h2</db.script>
                 <jpa.database>H2</jpa.database>
@@ -641,6 +638,9 @@
         -->
         <profile>
             <id>PostgreSQL</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <db.script>postgresql</db.script>
                 <jpa.database>POSTGRESQL</jpa.database>
